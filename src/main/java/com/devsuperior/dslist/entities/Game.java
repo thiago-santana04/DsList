@@ -16,27 +16,33 @@ public class Game {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String titulo;
+	private String title;
 	
 	@Column(name = "game_year")
-	private Integer ano;
-	private String genero;
-	private String plataforma;
+	private Integer year;
+	private String genre;
+	private String platforms;
+	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	public Game() {
 		
 	}
 
-	public Game(Long id, String titulo, Integer ano, String genero, String plataforma, String imgUrl,
+	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
 			String shortDescription, String longDescription) {
 		this.id = id;
-		this.titulo = titulo;
-		this.ano = ano;
-		this.genero = genero;
-		this.plataforma = plataforma;
+		this.title = title;
+		this.year = year;
+		this.genre = genre;
+		this.platforms = platforms;
+		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
@@ -50,36 +56,44 @@ public class Game {
 		this.id = id;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public Integer getAno() {
-		return ano;
+	public Integer getYear() {
+		return year;
 	}
 
-	public void setAno(Integer ano) {
-		this.ano = ano;
+	public void setYear(Integer year) {
+		this.year = year;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getGenre() {
+		return genre;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
 
-	public String getPlataforma() {
-		return plataforma;
+	public String getPlatforms() {
+		return platforms;
 	}
 
-	public void setPlataforma(String plataforma) {
-		this.plataforma = plataforma;
+	public void setPlatforms(String platforms) {
+		this.platforms = platforms;
+	}
+
+	public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
 	}
 
 	public String getImgUrl() {
